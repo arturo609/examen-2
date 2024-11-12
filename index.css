@@ -1,0 +1,126 @@
+body{
+    /* background: #E09A2F; */
+    background-image: url(evee.png);
+    background-size: cover;    /* hace que la imagen cubra toda la pantalla */
+    background-position: center;
+    background-attachment: fixed;
+}
+h1{
+    margin: 2;
+    border-radius: .8rem;
+    background: linear-gradient(332deg, rgba(91, 117, 164, 0.414) 0%, rgba(21,31,48,1) 100%);
+    border: solid 8px #6558c9a3;        /*borde*/
+    text-align: center;
+    color: aqua;
+    
+    width: 50%;             /* ajustar el ancho del contenedor */
+    margin: 0 auto;         /* centrar el titulo horizontalmente */
+    padding: 10px;          /* reduce el espacio interno */
+    
+}
+.p{
+    text-align: center;
+}
+.contenedor{
+    width: auto;                                /* ancho automatico */
+    border: solid 5px hsla(215, 70%, 55%, 0.392) ;              /* ancho del borde y el color*/
+    opacity: 80%;                                       /* modifica la transparencia */
+    border-radius: 1REM;
+    padding: auto;                               /* espacio interno */
+    background-color: rgba(136, 123, 123, 0.949);       /* color dell fondo */
+    display: grid;
+    grid-template-columns: .10fr .10fr;         /**/
+    grid-template-rows: .10fr .10fr;
+}
+
+.contenedor2{
+    width: auto;                                /* ancho automatico */
+    border: solid 5px #3e80ddc0;              /* ancho del borde y el color*/
+    border-radius: 1REM;
+    padding: auto;                               /* espacio interno */
+    background-color: rgba(136, 123, 123, 0.775);       /* color dell fondo */
+    display: grid;
+    grid-template-columns: .10fr .10fr;         /**/
+    grid-template-rows: .10fr .10fr;
+}
+.contenedor3{
+    width: auto;                                /* ancho automatico */
+    border: solid 5px hsla(215, 70%, 55%, 0.392) ;              /* ancho del borde y el color*/
+    opacity: 80%;                                       /* modifica la transparencia */
+    border-radius: 1REM;
+    padding: auto;                               /* espacio interno */
+    background-color: rgba(136, 123, 123, 0.949);       /* color dell fondo */
+    display: grid;
+    grid-template-columns: .10fr .10fr;         /**/
+    grid-template-rows: .10fr .10fr;
+}
+.contenedor4{
+    width: auto;                                /* ancho automatico */
+    border: solid 5px hsla(215, 70%, 55%, 0.392) ;              /* ancho del borde y el color*/
+    opacity: 80%;                                       /* modifica la transparencia */
+    border-radius: 1REM;
+    padding: auto;                               /* espacio interno */
+    background-color: rgba(136, 123, 123, 0.949);       /* color dell fondo */
+    display: grid;
+    grid-template-columns: .10fr .10fr;         /**/
+    grid-template-rows: .10fr .10fr;
+}
+.contenedor5{
+    width: auto;                                /* ancho automatico */
+    border: solid 5px hsla(215, 70%, 55%, 0.392) ;              /* ancho del borde y el color*/
+    opacity: 80%;                                       /* modifica la transparencia */
+    border-radius: 1REM;
+    padding: auto;                               /* espacio interno */
+    background-color: rgba(136, 123, 123, 0.949);       /* color dell fondo */
+    display: grid;
+    grid-template-columns: .10fr .10fr;         /**/
+    grid-template-rows: .10fr .10fr;
+}
+.contenedor6{
+    width: auto;                                /* ancho automatico */
+    border: solid 5px hsla(215, 70%, 55%, 0.392) ;              /* ancho del borde y el color*/
+    opacity: 80%;                                       /* modifica la transparencia */
+    border-radius: 1REM;
+    padding: auto;                               /* espacio interno */
+    background-color: rgba(136, 123, 123, 0.949);       /* color dell fondo */
+    display: grid;
+    grid-template-columns: .10fr .10fr;         /**/
+    grid-template-rows: .10fr .10fr;
+}
+
+.boton{
+    text-align: center;
+    text-decoration: none;                          /* elmina lo subrallado*/
+    font-size: 14px;                                /* tamaño de la fuente del texto*/
+    margin: 5px auto;                               /* agrega margen- espacio alrededor del boton*/
+    cursor: pointer;
+    color: black;
+    background-color: rgb(185, 187, 187);       /* color del fondo*/
+    padding: auto;                                  /* agrega relleno*/
+    border: solid 2px #e62a56a3;        /*borde*/
+    border-radius: 10rem;
+    transform: scale(1.1);
+}
+
+/*
+50vh media pagina
+1rem despegar de los bordes
+display: grid;    es una rejilla
+
+*/
+
+/*
+    DOC
+    *PILA - COLA
+    *LISTA - DOBLAR - CIRCULAR
+    *ARBOL
+*/
+
+/* .columna{
+    background-color: white;
+    border: solid 5px black;
+    border-radius: 1rem;
+
+    text-align: left;
+    font-size: 10px;
+ } */

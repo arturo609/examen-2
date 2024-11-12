@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIRCULAR</title>
+    <link rel="stylesheet" href="circular.css">    
+    <link rel="icon" href="ser.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="contenedor">
+        <a href="index.html">
+            <!-- <img src="biquini.jpeg" alt="h" class="biquini"> -->
+             <p class="SALIDA">SALIDA</p>
+            <img src="bob-removebg-preview.png" alt="" class="imagenboton">   
+        </a>
+    </div>
+    <div class="contenedor2">
+        <div class="titulo"><p> CIRCULAR </p></div>
+        <div class=" codigo"> 
+            <div class="columna1">
+            <pre>
+                class Nodo{
+                    constructor(dato){
+                        this.dato = dato;
+                        this.next = null;
+                        this.back = null;
+                    }
+                }
+                
+                class ListaCDE{
+                    constructor(){
+                        this.head = null;
+                        this.tail = null;
+                        this.size = 0;
+                    }
+                
+                    insertFirst(dato){
+                        let newnode = new Nodo(dato);
+                        if(this.size===0){
+                            this.head = newnode;
+                            this.tail = newnode;
+                            newnode.next = this.tail;
+                            newnode.back = this.head;
+                            this.size++;
+                            return newnode.dato;
+                        }
+                
+                        let current = this.head;
+                        for(let i=0; i<this.size; i++){
+                            current = current.next;
+                            if(current === this.tail){
+                                this.tail.next = newnode;
+                                newnode.next = this.head;
+                                newnode.back = this.tail;
+                                this.head.back = newnode
+                                this.head = newnode;
+                                this.size++
+                                return newnode.dato;
+                            }
+                        }
+                    }
+                
+                    insertLast(dato){
+                        let newnode = new Nodo(dato);
+                        if(this.size===0){
+                            this.head = newnode;
+                            this.tail = newnode;
+                            newnode.next = this.tail;
+                            newnode.back = this.head;
+                            this.size++;
+                            return newnode.dato;
+                        }
+                
+                        /* let current = this.head;
+                        for(let i=0; i<this.size; i++){
+                            current = current.next;
+                            if(current===this.tail){
+                                this.tail.next = newnode;
+                                newnode.back = this.tail;
+                                newnode.next = this.head;
+                                this.head.back = newnode;
+                                this.tail = newnode;
+                                this.size++;
+                                return newnode.dato;
+                            }
+                        } */
+                        this.tail.next = newnode;
+                        newnode.back = this.tail;
+                        newnode.next = this.head;
+                        this.head.back = newnode;
+                        this.tail = newnode;
+                        this.size++;
+                        return this.tail.dato;
+                    }
+                
+                    insertAt(dato, index){
+                        if(index<0 || index>this.size){
+                            return null;
+                        }
+                        let newnode = new Nodo(dato);
+                        if(index===0){
+                            this.insertFirst(dato);
+                            return newnode.dato;
+                        }
+                        if(index===this.size){
+                            this.insertLast(dato);
+                            return newnode.dato;
+                        }
+                
+                        let current =this.head;
+                        for(let i=0; i<index; i++){
+                            current = current.next;
+                        }
+                        current.back.next = newnode;
+                        newnode.back = current.back;
+                        newnode.next = current;
+                        current.back = newnode;
+                        this.size++;
+                        return newnode.dato;
+                    }
+                
+                    removeFirst(){
+                        if(this.size===0){
+                            return null;
+                        }
+                        
+                        let current = this.head;
+                        
+                        if(this.size===1){
+                            this.head = null;
+                            this.tail = null;
+                            this.size = 0;
+                            return current.dato;
+                        }
+                
+                        this.tail.next = this.head.next;
+                        this.head.next.back = this.tail;
+                        this.head = this.head.next;
+                        this.size--;
+                        return current.dato;
+                    }
+                
+                    removeLast(){
+                        if(this.size===0){
+                            return null;
+                        }
+                        
+                        let current = this.tail;
+                        
+                        if(this.size===1){
+                            this.head = null;
+                            this.tail = null;
+                            this.size = 0;
+                            return current.dato;
+                        }
+                
+                        this.tail.back.next = this.head;
+                        this.head.back = this.tail.back;
+                        this.tail = this.tail.back;
+                        this.size--;
+                        return current.dato;
+                    }
+                
+                    removeData(dato){
+                        if(this.size===0){
+                            return null;
+                        }
+                    }
+                
+                    removeFrom(index){
+                        if(this.size===0){
+                            return null;
+                        }
+                
+                        if(index===0){
+                            this.removeFirst();
+                            return;
+                        }
+                        if(index===this.size-1){
+                            this.removeLast();
+                            return;
+                        }
+                        let current = this.head;
+                        for(let i=0; i<index; i++){
+                            current = current.next;
+                        }
+                        current.back.next = current.next;
+                        current.next.back = current.back;
+                        this.size--;
+                        return current.dato;
+                    }
+                
+                    removeList(){
+                        this.head = null;
+                        this.tail = null;
+                        this.size = 0;
+                    }
+                
+                    print(){
+                        if(this.size===0){
+                        return null;
+                        }
+                        let current = this.head;
+                        let mostrar = "";
+                        for(let i=0; i<this.size; i++){
+                            mostrar += current.dato+" " 
+                            current = current.next;
+                        }
+                        return mostrar;
+                    }
+                
+                    reveresePrint(){
+                        if(this.size===0){
+                            return null;
+                            }
+                            let current = this.tail;
+                        let mostrar = "";
+                        for(let i=this.size-1; i>=0; i--){
+                            mostrar += current.dato+" " 
+                            current = current.back;
+                        }
+                        return mostrar;
+                    }
+                
+                    isEmpty(){
+                        if(this.size===0){
+                            return true;
+                        }
+                        return false;
+                    }
+                
+                    getSize(){
+                        return this.size;
+                    }
+                }
+                
+                const lista = new ListaCDE();
+                
+                lista.insertFirst(1);
+                lista.insertLast(8);
+                lista.insertLast(9);
+                lista.insertLast(19);
+                lista.insertLast(29);
+                lista.insertLast(99);
+                console.log(lista);
+            </pre></div>
+            <div class="columna2"> 
+             <p>Clase Nod, Cada nodo de la lista contiene:</p> 
+                <br><strong>dato:</strong>El valor que almacena el nodo.
+                <br><strong>next:</strong>Un puntero al siguiente nodo de la lista.
+                <br><strong>back:</strong>Un puntero al nodo anterior.
+                <br>
+                <br><strong></strong>Clase ListaCDE (Lista Circular Doble Enlazada)
+                <br>La clase ListaCDE implementa la lista circular doblemente enlazada. Tiene varios métodos para manipular los nodos de la lista. Veamos cómo se organizan:
+                <br>Propiedades:
+                <br><strong>head:</strong>Apunta al primer nodo de la lista.
+                <br><strong>tail:</strong> Apunta al último nodo de la lista.
+                <br><strong>size:</strong>Mantiene el conteo de nodos en la lista.               
+               <br>
+                <br>Métodos:<strong>insertFirst(dato): </strong>Inserta un nuevo nodo al principio de la lista.
+                <br> Si la lista está vacía, el nuevo nodo se convierte tanto en head como en tail.
+                <br> Si no, conecta el nuevo nodo como el primer nodo, actualizando los punteros next y back de los nodos afectados.
+                <br>Después de agregar el nodo, el contador de tamaño size se incrementa.
+                <br><strong>insertLast(dato)</strong>: Inserta un nuevo nodo al final de la lista.
+                <br>Si la lista está vacía, el nuevo nodo se convierte tanto en head como en tail.
+                <br> Si no, el nuevo nodo se coloca al final y los punteros next y back se actualizan para mantener la circularidad de la lista.
+                <br>Después de agregar el nodo, el contador de tamaño size se incrementa.
+                <br>
+                <br>insertAt(dato, index): Inserta un nodo en una posición específica de la lista.
+                <br>Si el índice es 0, se inserta al principio usando <strong>insertFirst()</strong>.
+                <br>Si el índice es igual a size, se inserta al final usando <strong>insertLast()</strong>.
+                <br>Si el índice está en el medio, el método recorre la lista hasta encontrar la posición y luego actualiza los punteros next y back de los nodos involucrados.
+                <br>
+                <br><strong>removeFirst():</strong>Elimina el primer nodo de la lista.
+                <br><strong></strong>Si la lista tiene solo un nodo, tanto head como tail se establecen en null.
+                <br><strong></strong>Si la lista tiene más de un nodo, el nodo head se elimina y se actualizan los punteros para mantener la circularidad.
+                <br><strong></strong>Después de eliminar el nodo, el contador de tamaño size se decrementa.
+                <br><strong></strong>
+                <br><strong>  removeLast():</strong>
+                <br><strong></strong>  Elimina el último nodo de la lista.
+                <br>Si la lista tiene solo un nodo, tanto head como tail se establecen en<strong> null.</strong>
+                <br><strong></strong>Si la lista tiene más de un nodo, el nodo tail se elimina y se actualizan los punteros para mantener la circularidad.
+                <br><strong></strong>  Después de eliminar el nodo, el contador de tamaño size se decrementa.
+                <br><strong></strong>
+                <br><strong>removeData(dato):</strong>Este método no está completamente implementado en el código, pero se sugiere que eliminaría un nodo con un dato específico. Este método seguiría un enfoque similar a los anteriores: recorrería la lista y ajustaría los punteros next y back para excluir el nodo.
+                <br><strong>removeFrom(index):</strong>Elimina un nodo en una posición específica.
+                <br>Si el índice es 0, se usa<strong>removeFirst().</strong>
+                <br>Si el índice es size - 1, se usa <strong>removeLast().</strong>
+              <br>
+                <br><strong></strong>Si el índice está en el medio, recorre la lista hasta la posición, ajusta los punteros y elimina el nodo.
+                <br><strong>removeList():</strong> Elimina todos los nodos de la lista, estableciendo head y tail en <strong> null </strong>y <strong>size</strong> en 0. 
+                <br><strong>reveresePrint():</strong>Muestra los datos de los nodos desde el final hasta el principio, recorriendo la lista usando los punteros back.
+                <br><strong></strong>
+                        
+                 
+
+                
+                
+                  
+                
+                
+                
+                
+              
+
+
+
+               
+                
+                            
+                <br><strong></strong>
+                <br><strong></strong>
+                <br> 
+                 
+                
+                <br> 
+            </div>
+        </div>
+    </div>
+    <div class="explicacion">
+        <p>
+            explicacion
+        </p>
+    </div>
+</body>
+</html>

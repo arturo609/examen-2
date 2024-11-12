@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOBLAR</title>
+    <link rel="stylesheet" href="doblar.css">    
+    <link rel="icon" href="ser.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="contenedor">
+        <a href="index.html">
+            <!-- <img src="biquini.jpeg" alt="h" class="biquini"> -->
+             <p class="SALIDA">SALIDA</p>
+            <img src="bob-removebg-preview.png" alt="" class="imagenboton">   
+        </a>
+    </div>
+    <div class="contenedor2">
+        <div class="titulo"><p> doblar </p></div>
+        <div class=" codigo"> 
+            <div class="columna1">
+            <pre>
+                IMPLEMENTACION DEL METODO doblar()  EN CLASE pila
+
+                class Pila {
+                    constructor() {
+                        this.almacenPila = {};  // Usamos un objeto para almacenar los elementos de la pila.
+                        this.contPila = 0;      // Contador que mantiene el seguimiento de la cantidad de elementos en la pila.
+                    }
+                
+                    // Método para agregar un nuevo elemento a la pila
+                    push(elemento) {
+                        this.almacenPila[this.contPila] = elemento;  // Almacenamos el elemento en la posición 'contPila'.
+                        this.contPila++;  // Incrementamos el contador para el siguiente índice.
+                        return this.almacenPila;  // Retornamos el objeto que contiene los elementos de la pila.
+                    }
+                
+                    // Método para eliminar y retornar el último elemento de la pila
+                    pop() {
+                        if (this.contPila === 0) {  // Si la pila está vacía.
+                            return null;  // Retornamos 'null' si no hay elementos.
+                        }
+                        this.contPila--;  // Decrementamos el contador de elementos.
+                        const elemento = this.almacenPila[this.contPila];  // Obtenemos el último elemento.
+                        delete this.almacenPila[this.contPila];  // Eliminamos el último elemento de la pila.
+                        return elemento;  // Retornamos el elemento eliminado.
+                    }
+                
+                    // Método para ver el último elemento sin eliminarlo
+                    peek() {
+                        if (this.contPila === 0) {  // Si la pila está vacía.
+                            return null;  // Retornamos 'null' si no hay elementos.
+                        }
+                        return this.almacenPila[this.contPila - 1];  // Retornamos el último elemento sin eliminarlo.
+                    }
+                
+                    // Método para obtener el tamaño de la pila
+                    size() {
+                        return this.contPila;  // El tamaño de la pila es igual al valor de 'contPila'.
+                    }
+                
+                    // Método para imprimir el contenido de la pila
+                    print() {
+                        return this.almacenPila;  // Retornamos el objeto que contiene los elementos de la pila.
+                    }
+                
+                    // Nuevo método para "doblar" los elementos de la pila
+                    doblar() {
+                        // Creamos una copia de la pila original para evitar modificarla mientras iteramos.
+                        let copiaPila = Object.values(this.almacenPila); // Convertimos el objeto en un arreglo.
+                        
+                        // Recorremos la copia de la pila y agregamos cada elemento de nuevo a la pila.
+                        copiaPila.forEach(elemento => {
+                            this.push(elemento);  // Agregamos cada elemento al final de la pila.
+                        });
+                
+                        return this.almacenPila;  // Retornamos la pila con los elementos duplicados.
+                    }
+                }
+                
+                // Ejemplo de uso de la pila con el método 'doblar'
+                const PILA = new Pila();
+                
+                // Agregamos algunos elementos a la pila
+                PILA.push(10);
+                PILA.push(20);
+                PILA.push(30);
+                
+                console.log("Pila original: ", PILA.print());  // Muestra la pila original
+                
+                // Llamamos al método 'doblar' para duplicar los elementos
+                PILA.doblar();
+                
+                console.log("Pila después de doblar: ", PILA.print());  // Muestra la pila después de duplicar
+                
+            </pre></div>
+            <div class="columna2">
+                <p>Clase <strong>PilaL</strong> a clase Pila implementa una estructura de datos tipo pila utilizando un objeto JavaScript. Vamos a desglosar las partes clave de la clase:</p> 
+                <br><strong>almacenPila: </strong>Es un objeto que guarda los elementos de la pila. En lugar de usar un arreglo, aquí usas un objeto con índices numéricos (que es lo que hace JavaScript internamente cuando usas un arreglo).
+                <br><strong>contPila: </strong>Es un contador que mantiene el número de elementos en la pila. Este contador se incrementa cuando agregas un nuevo elemento <strong>(push())</strong> y se decrementa cuando eliminas un elemento <strong>(pop()).</strong>
+              <br>
+                <br><strong></strong>metodos
+                <br><strong>push(elemento):</strong> Añade un nuevo elemento al final de la pila. El elemento se almacena en el objeto <strong> almacenPila </strong> usando el índice <strong>contPila </strong>como clave, y luego se incrementa el contador <strong>contPila</strong>.
+                <br><strong>pop(): </strong>Elimina y retorna el último elemento de la pila. Si la pila está vacía <strong>(contPila === 0),</strong> retorna <strong>null</strong>. Para eliminar el último elemento, decrementa <strong>contPila</strong> y luego usa delete para eliminar la propiedad del objeto almacenPila.
+                <br><strong>peek():</strong> Retorna el último elemento de la pila sin eliminarlo. Si la pila está vacía, también retorna <strong>null</strong>.
+                <br><strong>size():</strong> Retorna el número de elementos en la pila, que es el valor de <strong>contPila</strong>.
+                <br><strong>Método doblar()</strong>Este es el nuevo método que se ha agregado a la clase, y lo que hace es duplicar todos los elementos de la pila.
+                <br><strong>El método doblar()</strong> de la clase Pila recorre la pila original y agrega una copia de cada elemento al final de la misma. Esto resulta en una pila donde los elementos originales están duplicados al final, sin alterar el orden de los elementos.
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            
+            
+            </div>
+        </div>
+    </div>
+    <div class="explicacion">
+        <p>
+            explicacion
+        </p>
+    </div>
+</body>
+</html>

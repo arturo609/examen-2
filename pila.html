@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PILA </title>
+    <link rel="stylesheet" href="pila.css">
+    <link rel="icon" href="ser.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <a href="index.html">
+            <!-- <img src="biquini.jpeg" alt="h" class="biquini"> -->
+             <p class="SALIDA">SALIDA</p>
+            <img src="bob-removebg-preview.png" alt="" class="imagenboton">   
+        </a>
+    </div>
+    <div class="contenedor2">
+        <div class="titulo"><p> PILA </p></div>
+        <div class=" codigo"> 
+            <div class="columna1">
+            <pre>//IMPLEMENTANDO PILA CON ARREGLO
+                class Pila {
+                    constructor() {
+                        this.almacenPila = {};  // Usamos un objeto para almacenar los elementos de la pila.
+                        this.contPila = 0;      // Contador que mantiene el seguimiento de la cantidad de elementos en la pila.
+                    }
+                
+                    // Método para agregar un nuevo elemento a la pila
+                    push(elemento) {
+                        this.almacenPila[this.contPila] = elemento;  // Almacenamos el elemento en la posición 'contPila'.
+                        this.contPila++;  // Incrementamos el contador para el siguiente índice.
+                        return this.almacenPila;  // Retornamos el objeto que contiene los elementos de la pila.
+                    }
+                
+                    // Método para eliminar y retornar el último elemento de la pila
+                    pop() {
+                        if (this.contPila === 0) {  // Si la pila está vacía.
+                            return null;  // Retornamos 'null' si no hay elementos.
+                        }
+                        this.contPila--;  // Decrementamos el contador de elementos.
+                        const elemento = this.almacenPila[this.contPila];  // Obtenemos el último elemento.
+                        delete this.almacenPila[this.contPila];  // Eliminamos el último elemento de la pila.
+                        return elemento;  // Retornamos el elemento eliminado.
+                    }
+                
+                    // Método para ver el último elemento sin eliminarlo
+                    peek() {
+                        if (this.contPila === 0) {  // Si la pila está vacía.
+                            return null;  // Retornamos 'null' si no hay elementos.
+                        }
+                        return this.almacenPila[this.contPila - 1];  // Retornamos el último elemento sin eliminarlo.
+                    }
+                
+                    // Método para obtener el tamaño de la pila
+                    size() {
+                        return this.contPila;  // El tamaño de la pila es igual al valor de 'contPila'.
+                    }
+                
+                    // Método para imprimir el contenido de la pila
+                    print() {
+                        return this.almacenPila;  // Retornamos el objeto que contiene los elementos de la pila.
+                    }
+                }
+                
+                const PILA = new Pila();  // Creamos una instancia de la clase `Pila`.
+
+                SALIDA ESPERADA 
+30      // Muestra el último elemento de la pila (sin eliminarlo)
+3       // Muestra el tamaño de la pila (3 elementos)
+30      // Elimina y retorna el último elemento (30)
+2       // Muestra el tamaño de la pila después de eliminar un elemento (2 elementos)
+{0: 10, 1: 20}  // Imprime los elementos restantes en la pila
+
+                </pre></div>
+            <div class="columna2"> 
+            <p>propiedades: la clase <strong>pila</strong> tiene dos propiedades principales:</p> 
+            <br><strong>this.almacenPila:</strong>Es un objeto que almacena los elementos de la pila. Cada elemento se almacena como una propiedad de este objeto, y el índice de cada propiedad es el índice de la pila.
+            <br><strong>this.contPila:</strong> Es un contador que se utiliza para llevar la cuenta de la cantidad de elementos en la pila. Este valor también funciona como el índice para el próximo elemento que se va a agregar a la pila.
+            <br><strong>push(elemento):</strong>Este método agrega un nuevo elemento a la parte superior de la pila.
+            <br>Almacenar el <strong>elemento</strong> en <strong>this.almacenPila</strong> en la pocicion de <strong>this.conPila</strong> que es el indice de la pila en este momento.
+            <br>incrementa<strong>this.contrapila</strong> para preparar el estado actual de la pila.
+            <br>
+            <br><strong>pop():</strong> Este método elimina y retorna el último elemento agregado a la pila. Si la pila está vacía (cuando <strong>this.pila</strong> es 0), retorna <strong>null</strong>
+            <br>Primero, decrementa<strong> this.contPila</strong>para optener el indice del ultimo elemento, luego guarda el valor en ese indice.
+            <br>Eliminar ese elemento del objetos <strong>this.almacenPila</strong> usando <strong>delete</strong> finalmente, retorna el elemento eliminado.
+            <br>
+            <br><strong>peek();</strong> Este método retorna el último elemento de la pila sin eliminarlo. Si la pila está vacía, retorna <strong>null</strong>
+            <br><strong>size():</strong>Este método retorna el número de elementos en la pila, que es igual al valor de <strong>this.contPila</strong> ya que este contador refleja cuántos elementos se han agregado a la pila.
+            <br><strong>push(elemento): </strong>Agrega un elemento al final (parte superior) de la pila.
+            <br><strong>pop():</strong> Elimina y retorna el último elemento.
+            <br><strong>peek():</strong> retorna el ultimo elemento sin eliminarlo
+            <br><strong>size(): </strong> retorna el numero de el elementos en la pila
+            <br><strong>print(): </strong> muestra los elementos de la pila.
+            </div>
+        </div>
+    </div>
+    <div class="explicacion">
+        <p>
+            explicacion
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARBOL</title>
+    <link rel="icon" href="ser.ico" type="image/x-icon">
+    <link rel="stylesheet" href="arbol.css">    
+</head>
+<body>
+    <div class="contenedor">
+        <a href="index.html">
+            <!-- <img src="biquini.jpeg" alt="h" class="biquini"> -->
+             <p class="SALIDA">SALIDA</p>
+            <img src="bob-removebg-preview.png" alt="" class="imagenboton">   
+        </a>
+    </div>
+    <div class="contenedor2">
+        <div class="titulo"><p> ARBOL </p></div>
+        <div class=" codigo"> 
+            <div class="columna1">
+            <pre>
+                class Nodo{
+                    constructor(valor){
+                        this.valor=valor;
+                        this.derecha=null;
+                        this.izquierda=null;
+                    }
+                }
+                
+                class Arbol{
+                    constructor(){
+                        this.ruta=null;
+                    }
+                    //Metodos
+                    isEmpty(){
+                        return this.ruta===null;
+                    };
+                    add(valor){
+                        //verifica si el arbol tiene elementos
+                        if(this.isEmpty()){
+                            this.ruta = new Nodo(valor);
+                            return;
+                        }
+                
+                        let aux = this.ruta;
+                
+                        while(aux){
+                            if(valor < aux.valor){
+                                if(aux.izquierda){
+                                    aux = aux.izquierda;
+                                }else{
+                                    aux.izquierda = new Nodo(valor);
+                                    return;
+                                }
+                            }else{
+                                if(aux.derecha){
+                                    aux = aux.derecha;
+                                }else{
+                                    aux.derecha = new Nodo(valor);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                
+            </pre></div>
+            <div class="columna2"> 
+                <p>Clase Nodo</p> 
+                <br>La clase<strong>Nodo</strong>se utiliza para representar cada nodo en el árbol. Cada nodo tiene tres propiedades:
+                <br><strong>valor:</strong> El valor que almacena el nodo.
+                <br><strong>derecha:</strong>Un puntero que apunta al hijo derecho del nodo (es otro nodo o null si no existe).
+                <br><strong>izquierda:</strong>Un puntero que apunta al hijo izquierdo del nodo (también es otro nodo o null si no existe).
+                <br><strong></strong>
+                <br><strong>Clase Arbol</strong>
+                <br><strong></strong> La clase Arbol representa el árbol binario. Tiene una propiedad ruta que apunta al nodo raíz del árbol (o a null si el árbol está vacío).
+                <br><strong></strong>
+                <br><strong>Propiedades:</strong>
+                <br><strong>ruta:</strong>Es la raíz del árbol. Si el árbol está vacío, ruta es <strong>null.</strong> 
+                <br><strong>Métodos:</strong> <strong>isEmpty():</strong>Verifica si el árbol está vacío, es decir, si ruta es <strong>null</strong>.
+                <br>
+                <br><strong>add(valor):</strong>Este método inserta un valor en el árbol binario. Si el árbol está vacío, el primer nodo (ruta) se crea con el valor dado. Si ya existe al menos un nodo, el valor se inserta en el árbol de acuerdo con las reglas del Árbol Binario de Búsqueda (ABB):
+                <br><strong></strong>Si el valor es menor que el nodo actual, se va a la izquierda.
+                <br><strong></strong>Si el valor es mayor o igual, se va a la derecha.
+                <br><strong></strong>Para insertar un valor:
+                <br>Primero se verifica si el árbol está vacío, y si es así, el valor se coloca como la raíz<strong>(ruta).</strong>
+                <br><strong></strong>Si el árbol no está vacío, se comienza desde la raíz y se recorre el árbol comparando el valor a insertar con los nodos existentes. Si el valor es menor que el nodo actual, se mueve a la subárbol izquierdo; si es mayor o igual, se mueve a la subárbol derecho. El proceso continúa recursivamente hasta encontrar una posición vacía (donde izquierda o derecha sea null) para colocar el nuevo nodo.
+                <br><strong></strong>
+                <br><strong></strong>
+                <br>
+                <br>
+                <br>
+            
+
+
+  
+                
+               
+                
+                
+                  
+                 
+                 
+                 
+                 
+                 
+                  
+                 
+                
+                 
+ 
+ 
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="explicacion">
+        <p>
+            explicacion
+        </p>
+    </div>
+</body>
+</html>

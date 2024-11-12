@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTA</title>
+    <link rel="stylesheet" href="lista.css">  
+    <link rel="icon" href="ser.ico" type="image/x-icon">  
+</head>
+<body>
+    <div class="contenedor">
+        <a href="index.html">
+            <!-- <img src="biquini.jpeg" alt="h" class="biquini"> -->
+             <p class="SALIDA">SALIDA</p>
+            <img src="bob-removebg-preview.png" alt="" class="imagenboton">   
+        </a>
+    </div>
+    <div class="contenedor2">
+        <div class="titulo"><p> LISTA </p></div>
+        <div class=" codigo"> 
+            <div class="columna1">
+            <pre>
+                class Nodo {
+                    constructor(dato, next = null) {
+                        this.dato = dato;
+                        this.next = next;
+                    }
+                }
+                
+                class Linked {
+                    constructor() {
+                        this.head = null;
+                        this.saze = 0; // Contador de elementos en la lista
+                    }
+                
+                    // Método para insertar un nodo al final de la lista
+                    insertLast(datos) {
+                        this.saze++; // Aumentamos el tamaño
+                        let newNode = new Nodo(datos); // Creamos un nuevo nodo
+                        if (!this.head) {
+                            this.head = newNode; // Si la lista está vacía, el nuevo nodo es la cabeza
+                        } else {
+                            let tail = this.head; // Empezamos desde la cabeza
+                            while (tail.next !== null) { // Recorremos hasta el último nodo
+                                tail = tail.next;
+                            }
+                            tail.next = newNode; // El último nodo ahora apunta al nuevo nodo
+                        }
+                    }
+                
+                    // Método para insertar un nodo al principio de la lista
+                    insertFirst(datos) {
+                        this.saze++; // Aumentamos el tamaño
+                        let newNode = new Nodo(datos); // Creamos el nuevo nodo
+                        if (!this.head) {
+                            this.head = newNode; // Si la lista está vacía, el nuevo nodo es la cabeza
+                        } else {
+                            newNode.next = this.head; // El nuevo nodo apunta a la antigua cabeza
+                            this.head = newNode; // Ahora el nuevo nodo es la cabeza
+                        }
+                    }
+                
+                    // Método para obtener el tamaño de la lista
+                    getSize() {
+                        return this.saze; // Retornamos el tamaño de la lista
+                    }
+                }
+                
+                // Crear una lista enlazada
+                let list = new Linked();
+                console.log(list); // Lista vacía
+                
+                // Insertar elementos al final
+                list.insertLast(88);
+                console.log(list); // Imprime la lista después de insertar 88
+                list.insertLast(44);
+                console.log(list); // Imprime la lista después de insertar 44
+                list.insertLast(22);
+                console.log(list); // Imprime la lista después de insertar 22
+                
+                // Insertar elementos al principio
+                list.insertFirst(100); // Inserta 100 al principio
+                console.log(list); // Imprime la lista después de insertar 100
+                list.insertFirst(200); // Inserta 200 al principio
+                console.log(list); // Imprime la lista después de insertar 200
+                
+                // Obtener el tamaño de la lista
+                console.log("Tamaño de la lista:", list.getSize()); // Debería imprimir 5
+                
+            </pre></div>
+            <div class="columna2"> 
+            <p>la clase <strong>nodo:</strong> es la estructura básica de la lista enlazada. Cada nodo tiene dos propiedades:
+            <br><strong>dato:</strong> El valor almacenado en el nodo (puede ser cualquier tipo de dato, como un número, cadena, objeto, etc.).
+            <br><strong>next:</strong> Es un puntero que apunta al siguiente nodo de la lista. Si no hay un nodo siguiente (es el último nodo), next será null.</p>
+            <br>La clase Linked: La clase Linked representa la lista enlazada en sí misma. Esta clase tiene:
+            <br><strong>head:</strong> Es el primer nodo de la lista (la cabeza). Si la lista está vacía, head es null.
+            <br><strong>saze:</strong>Un contador que mantiene el tamaño de la lista, es decir, la cantidad de elementos almacenados.
+            <br>                
+            <br>Métodos de la clase <Linked:stro>insertLast(datos): </Linked:stro>Inserta un nuevo nodo al final de la lista.
+            <br>Si la lista está vacía, el nuevo nodo se convierte en la cabeza.
+            <br>Si no está vacía, recorre la lista hasta llegar al último nodo y lo enlaza con el nuevo nodo.
+            <br><strong>insertFirst(datos):</strong> Inserta un nuevo nodo al principio de la lista.
+            <br>Si la lista está vacía, el nuevo nodo se convierte en la cabeza.
+            <br>Si no está vacía, el nuevo nodo apunta a la antigua cabeza, y luego este nuevo nodo se convierte en la nueva cabeza.
+            <br><strong>getSize():</strong> Retorna el tamaño actual de la lista, es decir, la cantidad de nodos en la lista.
+                <br>
+            <br>insertLast: Inserta un nodo al final de la lista.
+            <br>Si la lista está vacía, el nodo se convierte en el primer nodo.
+            <br>Si no está vacía, recorre la lista hasta encontrar el último nodo y luego lo enlaza con el nuevo nodo.
+            <br><strong>insertFirst:</strong> Inserta un nodo al principio de la lista.
+            <br>
+            <br>Si la lista está vacía, el nodo se convierte en el primer nodo.
+            <br>Si no está vacía, el nuevo nodo apunta a la antigua cabeza, y luego ese nodo se convierte en la nueva cabeza de la lista.
+            <br>getSize: Retorna la cantidad de nodos en la lista (su tamaño).         
+            </div>
+        </div>
+    </div>
+    <div class="explicacion">
+        <p>
+            explicacion
+        </p>
+    </div>
+</body>
+</html>

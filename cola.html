@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> COLA </title>
+    <link rel="stylesheet" href="cola.css">
+    <link rel="icon" href="ser.ico" type="image/x-icon">
+</head>
+<body>
+    
+    <div class="contenedor">
+        <a href="index.html">
+            <!-- <img src="biquini.jpeg" alt="h" class="biquini"> -->
+             <p class="SALIDA">SALIDA</p>
+            <img src="bob-removebg-preview.png" alt="" class="imagenboton">   
+        </a>
+    </div>
+    <div class="contenedor2">
+        <div class="titulo"><p> COLA </p></div>
+        <div class=" codigo"> 
+            <div class="columna1">
+            <pre>class Cola { 
+                constructor() {
+                    // Se crea un objeto vacío para almacenar los elementos de la cola.
+                    this.almacenCola = {}; // Almacenamos los elementos en un objeto.
+                    this.inicio = 0;       // Puntero al primer elemento de la cola.
+                    this.fin = 0;          // Puntero al siguiente índice donde se agregará el próximo elemento.
+                }
+            
+                // Método para agregar un elemento al final de la cola (enqueue)
+                enqueue(elemento) {
+                    this.almacenCola[this.fin] = elemento; // Añadimos el nuevo elemento en la posición 'fin' de la cola.
+                    this.fin++;  // Incrementamos 'fin' para apuntar al próximo índice donde se agregará el siguiente elemento.
+                    return this.almacenCola;  // Retorna el estado actual de la cola.
+                }
+            
+                // Método para quitar y retornar el primer elemento de la cola (dequeue)
+                dequeue() {
+                    if (this.inicio === this.fin) { // Si el puntero 'inicio' es igual a 'fin', la cola está vacía.
+                        return null;  // No hay elementos que devolver, entonces retornamos 'null'.
+                    }
+                    const elemento = this.almacenCola[this.inicio]; // Guardamos el primer elemento de la cola.
+                    delete this.almacenCola[this.inicio];  // Eliminamos el primer elemento de la cola.
+                    this.inicio++;  // Incrementamos 'inicio' para apuntar al siguiente elemento.
+                    return elemento;  // Retornamos el primer elemento que fue eliminado de la cola.
+                }
+            
+                // Método para obtener el primer elemento de la cola sin eliminarlo (peek)
+                peek() {
+                    if (this.size() === 0) {  // Si el tamaño de la cola es 0 (está vacía).
+                        return null;  // No hay elementos que devolver, retornamos 'null'.
+                    }
+                    return this.almacenCola[this.inicio];  // Retornamos el primer elemento sin eliminarlo.
+                }
+            
+                // Método para obtener el tamaño de la cola (número de elementos en la cola)
+                size() {
+                    return this.fin - this.inicio;  // La diferencia entre 'fin' e 'inicio' nos da el tamaño de la cola.
+                }
+            
+                // Método para imprimir todos los elementos de la cola
+                print() {
+                    return this.almacenCola;  // Retorna el objeto que contiene los elementos de la cola.
+                }
+            
+                // Método para comprobar si la cola está vacía
+                isEmpty() {
+                    if (this.inicio === this.fin) { // Si 'inicio' es igual a 'fin', la cola está vacía.
+                        return true;  // Retorna 'true' si la cola está vacía.
+                    }
+                    return false;  // Si no, la cola no está vacía, retornamos 'false'.
+                }
+            }
+            
+            // Se crea una nueva instancia de la cola llamada 'COLA'.
+            const COLA = new Cola();
+
+            RESULTADO ESPERADO
+
+10   // Retorna el primer elemento sin eliminarlo
+10   // Elimina y retorna el primer elemento
+2    // Muestra el tamaño de la cola (restan 2 elementos)
+false // La cola no está vacía
+{ 1: 20, 2: 30 } // Imprime el estado de la cola con los elementos restantes
+
+            </pre>
+        </div>
+            <div class="columna2"> 
+            <p>La clase "COLA" tiene tres propiedades principiales,
+                <br><strong>this.almacencola:</strong> Es un objeto vacio que se utiliza para almacenar lo elementos de la cola.
+                <br><strong>this.inicio:</strong> Es el puntero que maraca el primer elemento de la cola (el que fue agregado primero) este valor comienza en 0.
+                <br><strong>this.fin:</strong> Es el elementp que marca el siguiente indice disponible para agregar un nuevo elemento, este valor tambien comienza en 0.
+            </p>
+            <p>Los metodos:
+                <br>*Almacenar el nuevo elemento en <strong>this.almacenCola</strong> en la pocicion de <strong>this.fin</strong>.
+                <br>*Luego Incrementa <strong>this.fin</strong> para que apunte al siguiente indice disponible para el proximo elemento.
+                <br>*Retora el objeto completo <strong>this.almacenCola</strong> para mostrar el estado actual de la cola.
+                <br>
+                <br><strong>size();</strong> este metodo retorna el numero de elementos en la cola. la calcula como la diferencia entre <strong>this.fin</strong> y <strong>this.inicio</strong> marca el siguiente indice disponible y <strong>this.inicio</strong> marca el primer indice ocupado
+                <br><strong>isEmpty()</strong> Este método devuelve <strong>true</strong> si la cola está vacía (es decir, si no hay elementos en la cola). Lo comprueba comparando <strong>this.inicio</strong> con <strong>this.fin</strong> Si ambos son iguales, significa que no hay elementos en la cola.
+                <br>
+                  <br>enqueue(elemento): Agrega un elemento al final.
+                  <br>dequeue(): Elimina y retorna el primer elemento
+                  <br>peek(): Retorna el primer elemento sin eliminarlo.
+                  <br>size(): Retorna el número de elementos en la cola.
+                  <br>print(): Muestra los elementos de la cola.
+                  <br>isEmpty(): Verifica si la cola está vacía.
+                  <br>
+            </p> 
+        </div>
+        </div>
+    </div>
+    <div class="explicacion">
+        <p>
+            explicacion
+        </p>
+    </div>
+</body>
+</html>

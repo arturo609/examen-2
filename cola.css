@@ -1,0 +1,129 @@
+body{
+    background: url(noche.jpg);
+    background-size: cover;    /* hace que la imagen cubra toda la pantalla */
+    background-position: center;
+    background-attachment: fixed;
+}
+.contenedor{
+    margin: 2;
+    border-radius: .8rem;
+    /* background: linear-gradient(332deg, rgba(91, 117, 164, 0.414) 0%, rgba(21,31,48,1) 100%); */
+    background-image: url("./bikini.jpeg");
+    background-size: content;
+    border: solid 8px #6558c9a3;        /*borde*/
+    text-align: center;
+    text-decoration: none;
+    color: aqua;
+    position: a;
+    width: 25%;  
+    /* height: 40vh; */           
+    margin: auto;         /* centrar el titulo horizontalmente */
+    padding: 25px;
+}
+/* .contenedor2{
+    text-decoration: none;
+    text-align: center;
+    margin: 2;
+    border-radius: 20px;
+    background-color: rgb(0, 0, 0);
+    background-image: url("./cola1.png");
+    height: 2vh;
+    padding: 50vh;
+    display: grid;
+    grid-template-columns: 1fr ;
+} */
+.titulo{
+    color: black;
+    text-shadow: 
+    0 0 20px #ff9900,
+    0 0 30px #ff6600,
+    0 0 40px #ff3300,
+    0 0 0px #ff0000;
+    text-decoration: none;
+    text-align: center;
+    margin: 2;
+    border-radius: 2rem;
+    background-color: rgb(240, 255, 255);
+    border: solid 2px black;
+    /* opacity: 100%; */ 
+}
+/* /////////////////////////////////////////////////////////////////////////////// */
+.columna1{
+   background-color: white;
+   border: solid 5px black;
+   border-radius: 1rem;
+   /* width: 45%; */
+   text-align: left;
+   font-size: 10px;
+}
+.columna2{
+    background-color: white;
+    text-align: left;
+    border: solid 5px black;
+    border-radius: 1rem;
+    font-size: 15px;
+    
+}
+
+.codigo{
+    text-align: left;
+    background-image: url(noche.jpg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: auto;
+    gap: 20px;
+   /*  display: grid;
+    grid-template-columns: .23fr .23fr;
+    grid-template-rows: .23fr .23fr; */
+    border: solid 8px #6558c9a3;
+    border-radius: 25px;
+    border-color: black;
+}
+.explicacion{
+    text-align: left;
+    background-color: rgb(225, 213, 190);
+    padding: auto;
+    border: solid 5px orange;
+    border-radius: 20px;
+    border-color: rgb(252, 111, 10);
+
+}
+
+
+.boton{
+    width: 16rem;       /* ancho */
+    height: 60px;       /* alto */
+
+    text-align: center;
+    text-decoration: none;                          /* elmina lo subrallado*/
+    font-size: 14px;                                /* tamaño de la fuente del texto*/
+    margin: 5px auto;                               /* agrega margen- espacio alrededor del boton*/
+    cursor: pointer;
+    color: black;
+    /* background-color: rgb(144, 222, 122); */       /* color del fondo*/
+    padding: auto;                                  /* agrega relleno*/
+    border: none;        /*borde*/
+    border-radius: none;
+    transform: scale(1.1);
+    
+}
+
+
+.imagenboton{
+    width: 250px;
+    border: none;
+    display: flex;
+    width: center;
+    position: relative;
+    top: 20px;      /* mober hacia abajo o arriba */
+    left: -50px;    /* mober izquierda o derecha */
+}
+.biquini{
+    width: 250px;
+    border: none;
+    display: flex;
+}
+
+.salida{
+    text-align: center;
+}
